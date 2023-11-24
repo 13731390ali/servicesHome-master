@@ -1,0 +1,67 @@
+.MainDivOne {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainImgOne {
+    display: flex;
+    width: 700px;
+    /* height: 150px; */
+}
+
+.MainDivTwo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainDivThree {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f2f5f8; */
+    min-height: 100px;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.MainDivFour {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: center;
+    width: 100%;
+}
+
+.border {
+    display: flex;
+    width: 80%;
+    height: 3px;
+    background-color: #57969f;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.MainDivItems {
+    display: flex;
+    flex-direction: row;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    border-radius: 12px;
+    /* box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px, rgb(6 34 49 / 10%) 0px 8px 28px; */
+}
+.moreInfoDiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+}

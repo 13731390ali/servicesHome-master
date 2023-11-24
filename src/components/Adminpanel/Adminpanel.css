@@ -1,0 +1,12 @@
+.panelStyle{
+    height: 80vh;
+    width: 15rem;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background-color: #25c91d;
+    color: #fff;
+}
+
+.panelStyle ul li {
+    cursor: pointer;
+}

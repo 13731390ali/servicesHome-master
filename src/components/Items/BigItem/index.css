@@ -1,0 +1,8 @@
+.BigItemDivOne {
+    display: flex;
+    width: 300px;
+    min-height: 100px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px, rgb(6 34 49 / 10%) 0px 8px 28px;
+    border-radius: 18px 18px 0px 0px;
+    background-color: #fff;
+}

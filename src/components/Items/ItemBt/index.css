@@ -1,0 +1,21 @@
+.ItemDiv{
+    display:flex ;
+    width: 130px;
+    height: 130px;
+    border-radius: 9px;
+    background-color: #fff;
+    margin: 25px;
+    border-bottom: 6px solid #111;
+    cursor: pointer;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.TypoItemBt{
+    font-size: 12px;
+    margin-top: 25px;
+}
+.imgItemBt{
+    display:flex;
+    width: 50px;
+}

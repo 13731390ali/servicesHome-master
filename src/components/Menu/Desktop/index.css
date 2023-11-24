@@ -1,0 +1,82 @@
+.baseDiv {
+    width: 100%;
+    min-height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    padding: 18px;
+}
+
+.typo3 {
+    display: flex;
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.typo4 {
+    display: flex;
+    background-color: #fff;
+    padding: 2px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 18px;
+    opacity: 0;
+}
+
+.more {
+    display: flex;
+    width: 40px;
+    cursor: pointer;
+}
+
+.Divthree {
+    display: flex;
+    flex-direction: row;
+}
+
+.typoOrder {
+    display: flex;
+    background-color: #00d283;
+    padding: 2px;
+    padding-right: 18px;
+    padding-left: 18px;
+    border-radius: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menuItemDrower {
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    padding: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.menuItemDrower::before {
+    display: flex;
+    width: 0%;
+    background-color: #05a9db;
+    content: "";
+    position: absolute;
+    height: 100%;
+    transition: 0.5s;
+    right: 0px;
+    opacity: 0.1;
+}
+
+.menuItemDrower:hover::before{
+    display: flex;
+    width: 100%;
+    background-color: #05a9db;
+    content: "";
+    position: absolute;
+    right: 0px;
+    height: 100%;
+}

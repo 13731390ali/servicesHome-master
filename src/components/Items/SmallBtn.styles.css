@@ -1,0 +1,32 @@
+.smallBtnroot{
+    padding: 30px;
+    
+}
+.smallBtnDivOne {
+    display: flex;
+    min-width: 130px;
+    /* max-width: 160px; */
+    height: 40px;
+    border-radius: 9px;
+    /* background-image: linear-gradient(to bottom, #eee 0, #E5E5E5 100%); */
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px, rgb(6 34 49 / 10%) 0px 8px 28px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 12px;
+}
+.smallBtnTwo{
+    display: flex;
+    width: 11px;
+    height: 11px;
+    background-color: aquamarine;
+    border-radius: 15px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.smallBtnTypoOne{
+    font-size: 6px;
+    
+}

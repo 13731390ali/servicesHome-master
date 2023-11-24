@@ -1,0 +1,31 @@
+.WidthlyRoot {
+    display: flex;
+    width: 300px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 9px;
+    margin: 30px;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    padding: 18px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 2px 24px, rgb(6 34 49 / 10%) 0px 8px 28px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.WidthlyRoot:hover{
+    box-shadow: rgb(0 0 0 / 18%) 0px 2px 24px, rgb(6 34 49 / 18%) 0px 8px 28px;
+    transition: 0.5s;
+
+}
+.imgWidthly{
+    display: flex;
+    width: 50px;
+    height: 50px;
+}
+.descDiv{
+    display: flex;
+    flex-direction: column;
+    margin-right: 18px;
+}
