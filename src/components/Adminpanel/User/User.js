@@ -32,13 +32,13 @@ const User = ({paremetrs}) => {
         </thead>
         <tbody>
           {items.map((item) => (
-            // <Link to={item.href}>
+          
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.date}</td>
               <td>
-                <button className="btn btn-warning btn-sm">ویرایش</button>
+                <button className="btn btn-warning btn-sm"><Link style={{color:"#000",textDecoration:"none"}} to={item.href}>ویرایش</Link></button>
               </td>
               <td>
                 <button
@@ -49,7 +49,7 @@ const User = ({paremetrs}) => {
                 </button>
               </td>
             </tr>
-            // </Link>
+           
           ))}
         </tbody>
       </table>

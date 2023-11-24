@@ -87,7 +87,7 @@ const Adminpanel = () => {
         </div>
         <div className="col-lg-7">
           {userpage ?  <User paremetrs={person} /> : null}
-         
+      
         </div>
       </div>
     </div>
