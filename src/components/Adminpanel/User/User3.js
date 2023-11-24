@@ -1,11 +1,11 @@
 import React from 'react'
-
+import Hoc from '../HOC/Hoc'
 const User3 = () => {
   return (
     <div>
-      user2
+      user3
     </div>
   )
 }
 
-export default User3
+export default Hoc(User3)
