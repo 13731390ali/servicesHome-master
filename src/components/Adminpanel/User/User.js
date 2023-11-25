@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const User = ({paremetrs}) => {
-
+const User = ({ paremetrs }) => {
   const [items, setItems] = useState(paremetrs);
- 
 
-  const Remove = (id , name) => {
-    
-  //  const del = fetch(`http://localhost:8000/posts/${id}`, {
-  //     method: "DELETE",
-    
-  //   });
-  if(window.confirm(`از حذف ${name} مطمئن هستید؟`)){
-    const item = items.filter((q) => q.id !== id)
-    setItems(item)
-    console.log(item)
-  }
-  
+  const del = (id) => {
+    fetch(`http://localhost:8000/posts/${id}`, {
+      method: "DELETE",
+    }).then(async (res) => {
+      const response = await fetch("http://localhost:8000/posts");
+      const responoseData = await response.json();
+      setItems(responoseData);
+    });
+  };
+
+  const Remove = (id, name) => {
+    if (window.confirm(`از حذف ${name} مطمئن هستید؟`)) {
+      // const item = items.filter((q) => q.id !== id);
+      del(id);
+      // setItems(item);
+      // console.log(item);
+    }
   };
 
   return (
@@ -32,24 +35,29 @@ const User = ({paremetrs}) => {
         </thead>
         <tbody>
           {items.map((item) => (
-          
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.date}</td>
               <td>
-                <button className="btn btn-warning btn-sm"><Link style={{color:"#000",textDecoration:"none"}} to={item.href}>ویرایش</Link></button>
+                <button className="btn btn-warning btn-sm">
+                  <Link
+                    style={{ color: "#000", textDecoration: "none" }}
+                    to={item.href}
+                  >
+                    ویرایش
+                  </Link>
+                </button>
               </td>
               <td>
                 <button
-                  onClick={() => Remove(item.id , item.name)}
+                  onClick={() => Remove(item.id, item.name)}
                   className="btn btn-danger btn-sm"
                 >
                   حذف
                 </button>
               </td>
             </tr>
-           
           ))}
         </tbody>
       </table>
