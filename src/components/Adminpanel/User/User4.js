@@ -8,7 +8,7 @@ const User4 = ({ name, style }) => {
       {style.map((item) => (
         <input style={{ width: `${item.width}`,backgroundColor:`${item.backgroundColor}` }} value={name} />
       ))}
-      {/* <p style={{outline}}></p> */}
+    
     </div>
   )
 }
