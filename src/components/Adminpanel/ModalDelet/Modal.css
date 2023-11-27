@@ -1,19 +1,22 @@
-.styleModal{
-    width: 10rem;
-    height: 10rem;
-    background-color: #e23636;
-    color: #000;
-    justify-content: center;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    right: 50%;
-}
-
-.backModal{
+.input{
     width: 100%;
-    height: 100vh;
-    background-color: #000;
-    /* opacity: 0.2; */
-    position: relative;
+    border: 1px solid #bab1b1;
+    border-radius: 5px;
+    outline: none;
 }
+.ModalMedia{
+    background-color: aquamarine;
+  
+}
+/* 
+@media screen and (max-width: 1020px) {
+    .ModalMedia{
+        width: 200px !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+    }
+ 
+ }
+  */

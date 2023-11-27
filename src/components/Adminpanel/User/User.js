@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import ModalBox from "../ModalDelet/ModalBox";
 
 const User = ({ paremetrs }) => {
   const [items, setItems] = useState(paremetrs);
@@ -29,25 +30,25 @@ const User = ({ paremetrs }) => {
         <thead>
           <tr>
             <th>کد</th>
-            <th>نام کاربر</th>
-            <th>تاریخ ثبت نام</th>
+            <th>نام </th>
+            <th>نام خانوادگی</th>
           </tr>
         </thead>
         <tbody>
           {items.map((item) => (
             <tr key={item.id}>
               <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.date}</td>
+              <td>{item.firstName}</td>
+              <td>{item.lastName}</td>
               <td>
-                <button className="btn btn-warning btn-sm">
-                  <Link
+               
+                  {/* <Link
                     style={{ color: "#000", textDecoration: "none" }}
                     to={item.href}
-                  >
-                    ویرایش
-                  </Link>
-                </button>
+                  > */}
+                  {/* <ModalBox parametrs={paremetrs}/> */}
+                  {/* </Link> */}
+              
               </td>
               <td>
                 <button

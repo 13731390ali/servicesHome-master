@@ -4,7 +4,8 @@ import AdminItems from "./AdminpanelItem/AdminItems";
 import User from "./User/User";
 import User2 from "./User/User2";
 import { Link } from "react-router-dom";
-import Modal from "./ModalDelet/Modal";
+import ModalBox from "./ModalDelet/ModalBox";
+
 
 const Adminpanel = () => {
 
@@ -34,20 +35,20 @@ const Adminpanel = () => {
     getPerson();
   }, []);
 
-  fetch('http://localhost:8000/posts', {
-  method: 'POST',
-  body: JSON.stringify({
-    id: 6,
-    date: "اول مهر",
-    name: "مریم",
-    href:"/User3"
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+//   fetch('http://localhost:8000/posts', {
+//   method: 'POST',
+//   body: JSON.stringify({
+//     id: 6,
+//     date: "اول مهر",
+//     name: "مریم",
+//     href:"/User3"
+//   }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
 
   // const parts = [
   //   { id: 101, title: "مدیریت کاربران" },
@@ -79,8 +80,9 @@ const Adminpanel = () => {
                 >
                  مدیریت کاربران
                 </li>
-                
+               
               </ul>
+              <li><ModalBox/></li>
             {/* ))}  */}
 
           </div>
