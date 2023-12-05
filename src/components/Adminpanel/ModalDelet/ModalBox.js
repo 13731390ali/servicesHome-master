@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
-
+import { ErrorMessage } from "@hookform/error-message";
 import "./Modal.css";
+
 // import { type } from "@testing-library/user-event/dist/type";
 
 const style = {
@@ -30,22 +30,9 @@ const ModalBox = ({ parametrs }) => {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
-  } = useForm({criteriaMode :"all"});
-
-  // console.log(persondata)
-
-  // const getdata = async (data) => {
-  //   const response = await fetch("http://localhost:8000/posts", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-
-  //     body: JSON.stringify(data),
-  //   });
-  // };
+  } = useForm({ criteriaMode: "all" });
 
   const onSubmit = async (data) => {
     if (data) {
@@ -59,36 +46,11 @@ const ModalBox = ({ parametrs }) => {
       },
 
       body: JSON.stringify(data),
+    }).then(() => {
+      alert("*ثبت نام شما با موفقیت انجام شد*");
+      setUserdata(data);
     });
   };
-
-  //   const[datavalue,setDatavalue] = useState(onSubmit)
-
-  //   console.log(datavalue)
-
-  //   useEffect(() => {
-  //     const getPerson = async () => {
-  //       const response = await fetch("http://localhost:8000/posts");
-  //       const responoseData = await response.json();
-  //       setDatavalue(responoseData);
-  //     };
-
-  //     getPerson();
-  //   }, []);
-  //   console.log(datavalue)
-
-  // async function postData(url = '', data = {}) {
-  // const response =  fetch('http://localhost:8000/posts', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: JSON.stringify(data)
-  // })
-  // return response.json()
-  //   }
-
-  //   console.log(watch("example"));
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -112,7 +74,7 @@ const ModalBox = ({ parametrs }) => {
             sx={{ display: "flex" }}
             component="h2"
           >
-            ویرایش ثبت نام
+            ثبت نام
           </Typography>
 
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -140,41 +102,44 @@ const ModalBox = ({ parametrs }) => {
               )}
 
               <input
-                
                 {...register("multipleErrorInput", {
                   required: "شماره همراه ضروری است!",
 
                   pattern: {
                     value: /^(0|[1-9]\d*)(\.\d+)?$/,
-                    message: "فقط شماره را وارد کنید"
+                    message: "صفر ابتدای شماره را وارد نکنید!",
                   },
-                  minLength:{
-                    value:11,
-                    message:"شماره وارد شده کمتر از 11 عدد است."
+                  minLength: {
+                    value: 10,
+                    message: "شماره وارد شده کمتر از 10 عدد است.",
                   },
-                  maxLength:{
-                    value:11,
-                    message:"شماره وارد شده بیشتر از 11 عدد است."
-                  }
-                 
+                  maxLength: {
+                    value: 10,
+                    message: "شماره وارد شده بیشتر از 10 عدد است.",
+                  },
                 })}
-                placeholder="شماره موبایل ..."
+                placeholder="شماره موبایل  918..."
                 style={{ display: "block", margin: "5px 0" }}
-                
               />
-          
-            <ErrorMessage
-            errors={errors}
-            name="multipleErrorInput"
-            render= {({messages}) => 
-            messages && 
-            Object.entries(messages).map(([type,message]) => (
-              <p style={{color:"red"}} key={type}>{message}</p>
-            ))
-          }
-          />
 
-              <input type="submit" style={{ display: "block" }} />
+              <ErrorMessage
+                errors={errors}
+                name="multipleErrorInput"
+                render={({ messages }) =>
+                  messages &&
+                  Object.entries(messages).map(([type, message]) => (
+                    <p style={{ color: "red" }} key={type}>
+                      {message}
+                    </p>
+                  ))
+                }
+              />
+
+              <input
+                className="buttSub"
+                type="submit"
+                style={{ display: "block" }}
+              />
             </form>
           </Typography>
         </Box>

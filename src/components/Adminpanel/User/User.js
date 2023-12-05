@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
-import ModalBox from "../ModalDelet/ModalBox";
+import React, { useState } from "react";
+import ModaBox2 from "../ModalDelet/ModaBox2";
 
 const User = ({ paremetrs }) => {
   const [items, setItems] = useState(paremetrs);
@@ -17,10 +16,7 @@ const User = ({ paremetrs }) => {
 
   const Remove = (id, name) => {
     if (window.confirm(`از حذف ${name} مطمئن هستید؟`)) {
-      // const item = items.filter((q) => q.id !== id);
       del(id);
-      // setItems(item);
-      // console.log(item);
     }
   };
 
@@ -41,14 +37,12 @@ const User = ({ paremetrs }) => {
               <td>{item.firstName}</td>
               <td>{item.lastName}</td>
               <td>
-               
-                  {/* <Link
-                    style={{ color: "#000", textDecoration: "none" }}
-                    to={item.href}
-                  > */}
-                  {/* <ModalBox parametrs={paremetrs}/> */}
-                  {/* </Link> */}
-              
+                <ModaBox2
+                  name={item.firstName}
+                  lastName={item.lastName}
+                  id={item.id}
+                  
+                />
               </td>
               <td>
                 <button
@@ -62,12 +56,6 @@ const User = ({ paremetrs }) => {
           ))}
         </tbody>
       </table>
-
-      {/* {paremetrs.map((item) => (
-        <div key={item.id}>
-            <h2>{item.name}</h2>
-        </div>
-      ))} */}
     </div>
   );
 };

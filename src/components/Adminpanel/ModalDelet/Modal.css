@@ -6,7 +6,15 @@
 }
 .ModalMedia{
     background-color: aquamarine;
-  
+}
+
+.buttSub{
+    background-color: #4fd217;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
 }
 /* 
 @media screen and (max-width: 1020px) {
