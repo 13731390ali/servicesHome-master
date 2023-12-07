@@ -28,7 +28,9 @@ const Adminpanel = () => {
         <div className="col-lg-3">
           <div className="panelStyle">
             <ul>
-              <li onClick={() => handleUsers()}>مدیریت کاربران</li>
+              <li style={{ listStyle: "none" }} onClick={() => handleUsers()}>
+                مدیریت کاربران
+              </li>
             </ul>
             <li>
               <ModalBox />

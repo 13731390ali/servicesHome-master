@@ -14,9 +14,10 @@ const User = ({ paremetrs }) => {
     });
   };
 
-  const Remove = (id, name) => {
-    if (window.confirm(`از حذف ${name} مطمئن هستید؟`)) {
+  const Remove = (id, lastName) => {
+    if (window.confirm(`از حذف ${lastName} مطمئن هستید؟`)) {
       del(id);
+     
     }
   };
 
@@ -25,9 +26,10 @@ const User = ({ paremetrs }) => {
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>کد</th>
+            <th>ردیف</th>
             <th>نام </th>
             <th>نام خانوادگی</th>
+            <th>کد ملی</th>
           </tr>
         </thead>
         <tbody>
@@ -36,17 +38,19 @@ const User = ({ paremetrs }) => {
               <td>{item.id}</td>
               <td>{item.firstName}</td>
               <td>{item.lastName}</td>
+              <td>{item.NationalCode}</td>
               <td>
                 <ModaBox2
                   name={item.firstName}
                   lastName={item.lastName}
                   id={item.id}
-                  
+                  phone={item.phoneNumber}
+                  NationalCode={item.NationalCode}
                 />
               </td>
               <td>
                 <button
-                  onClick={() => Remove(item.id, item.name)}
+                  onClick={() => Remove(item.id, item.firstName , item.lastName)}
                   className="btn btn-danger btn-sm"
                 >
                   حذف

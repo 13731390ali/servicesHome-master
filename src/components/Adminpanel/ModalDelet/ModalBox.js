@@ -47,7 +47,7 @@ const ModalBox = ({ parametrs }) => {
 
       body: JSON.stringify(data),
     }).then(() => {
-      alert("*ثبت نام شما با موفقیت انجام شد*");
+      alert("* ثبت نام شما با موفقیت انجام شد *");
       setUserdata(data);
     });
   };
@@ -102,7 +102,7 @@ const ModalBox = ({ parametrs }) => {
               )}
 
               <input
-                {...register("multipleErrorInput", {
+                {...register("phoneNumber", {
                   required: "شماره همراه ضروری است!",
 
                   pattern: {
@@ -124,7 +124,41 @@ const ModalBox = ({ parametrs }) => {
 
               <ErrorMessage
                 errors={errors}
-                name="multipleErrorInput"
+                name="phoneNumber"
+                render={({ messages }) =>
+                  messages &&
+                  Object.entries(messages).map(([type, message]) => (
+                    <p style={{ color: "red" }} key={type}>
+                      {message}
+                    </p>
+                  ))
+                }
+              />
+
+              <input
+                     {...register("NationalCode", {
+                      required: "وارد کردن کد ملی ضروری است!",
+    
+                      pattern: {
+                        value: /^(0|[1-9]\d*)(\.\d+)?$/,
+                        message: "صفر ابتدای کد را وارد نکنید!",
+                      },
+                      minLength: {
+                        value: 10,
+                        message: "کد وارد شده کمتر از 10 عدد است.",
+                      },
+                      maxLength: {
+                        value: 10,
+                        message: "کد وارد شده بیشتر از 10 عدد است.",
+                      },
+                    })}
+                    placeholder="کد ملی ..."
+                    style={{ display: "block", margin: "5px 0" }}
+              />
+              
+              <ErrorMessage
+                errors={errors}
+                name="NationalCode"
                 render={({ messages }) =>
                   messages &&
                   Object.entries(messages).map(([type, message]) => (
